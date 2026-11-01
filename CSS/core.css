@@ -1,0 +1,273 @@
+/* Core Vibrant Styling for Kids Exam App */
+
+:root {
+  --primary-bg: #F4F9FF;
+  --card-bg: #FFFFFF;
+  --accent-blue: #4A90E2;
+  --accent-purple: #9013FE;
+  --accent-green: #2ECC71;
+  --accent-red: #E74C3C;
+  --text-dark: #2C3E50;
+  --font-heading: 'Fredoka One', cursive;
+  --font-body: 'Quicksand', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--primary-bg);
+  color: var(--text-dark);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header & Index Page */
+.main-header {
+  background: linear-gradient(135deg, #FF7EB3, #FF758C);
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.main-header h1 {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.welcome-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px 30px;
+  margin: 30px 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.exam-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.exam-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  text-decoration: none;
+  color: var(--text-dark);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.exam-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+}
+
+.card-blue { border-top: 8px solid var(--accent-blue); }
+.card-purple { border-top: 8px solid var(--accent-purple); }
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #FFEAA7;
+  color: #D35400;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.btn-start {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: var(--accent-blue);
+  color: white;
+  border-radius: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Exam Page Styles */
+.top-nav {
+  background: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.back-btn {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--accent-blue);
+}
+
+.score-badge {
+  background: #E8F8F5;
+  color: #16A085;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+}
+
+.question-block {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  position: relative;
+}
+
+.q-number {
+  background: var(--accent-purple);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.reading-box {
+  background: #FFF9E6;
+  border-left: 5px solid #F1C40F;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Inputs & Auto-checking styles */
+input[type="text"], input[type="number"] {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 6px 12px;
+  border: 2px solid #CBD5E0;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.fill-input { width: 180px; }
+.small-fill { width: 90px; }
+.inline-fill { width: 100px; display: inline-block; }
+.num-input { width: 60px; text-align: center; }
+
+/* Correct / Wrong Highlight Classes applied by JS */
+input.correct {
+  border-color: var(--accent-green) !important;
+  background-color: #E8F8F5 !important;
+  color: #1E8449 !important;
+  font-weight: bold;
+}
+
+input.wrong {
+  border-color: var(--accent-red) !important;
+  background-color: #FDEDEC !important;
+  color: #C0392B !important;
+  font-weight: bold;
+}
+
+/* Action Bar */
+.action-bar {
+  text-align: center;
+  margin: 30px 0 50px;
+}
+
+.btn-submit {
+  background: var(--accent-green);
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(46, 204, 113, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.btn-submit:hover {
+  transform: scale(1.05);
+}
+
+.btn-reset {
+  background: #95A5A6;
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+/* Image Grid Placeholder */
+.image-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.img-card {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+}
+
+.placeholder-image {
+  background: #E2E8F0;
+  height: 100px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #64748B;
+  margin-bottom: 8px;
+}
+
+.quiz-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.quiz-table th, .quiz-table td {
+  border: 1px solid #E2E8F0;
+  padding: 10px;
+  text-align: left;
+}
+
+.quiz-table th {
+  background: #EDF2F7;
+}
